@@ -20,7 +20,9 @@ angular.module('triplerApp').factory('triplerService', function ($http) {
         $http({method: 'GET', url: 'http://airnet.org.au/program/javascriptEmbed.php?station=4&rpid=' + program.key + '&view=3&helperStart=http%3A%2F%2Fwww.rrr.org.au'}).
             success(function (data, status, headers, config) {
                 console.log('Program playlist success');
-                var $xml = $(new DOMParser().parseFromString(sanitiseHtmlText(data), 'text/xml'));
+                var respWrapper = document.createElement('div');
+                respWrapper.innerHTML = sanitiseHtmlText(data);
+                var $xml = $(respWrapper);
                 var playlist = {};
                 playlist.program = program.name;
                 playlist.date = parsePlaylistDateFromAmrapResponse($xml);

@@ -16,16 +16,32 @@ function ProgramsController($scope, triplerService, spotifyService) {
 
     function findPlaylistWrapper() {
         var listWrapper,
-            els = angular.element.find('#the-playlist');
+            els = angular.element.find('#playlist-wrapper');
         if (els && els.length == 1) {
             listWrapper = els[0];
         }
         return listWrapper;
     }
 
+    function findPlaylistButtons() {
+        var el,
+            els = angular.element.find('#playlist-buttons');
+        if (els && els.length == 1) {
+            el = els[0];
+        }
+        return el;
+    }
+
     function clearPlaylist() {
         $scope.playlistName = '';
         $scope.playlistTracks = [];
+
+        var listButtons = findPlaylistButtons();
+        if (listButtons.hasChildNodes()) {
+            for (var i = (listButtons.childNodes.length - 1); i >=0; i--) {
+                listButtons.removeChild(listButtons.childNodes[i]);
+            }
+        }
 
         var listWrapper = findPlaylistWrapper();
         if (listWrapper.hasChildNodes()) {
@@ -45,15 +61,16 @@ function ProgramsController($scope, triplerService, spotifyService) {
 
                 spotifyService.findOrCreateTemporaryPlaylist(rrrPlaylist, function (spotifyPlaylist) {
                     spotify.require(['$views/list#List', '$views/buttons#Button'], function (List, Button) {
-                        var addAsPlaylistButton = Button.withLabel('Add as Playlist');
+                        var addAsPlaylistButton = Button.withLabel('Save playlist');
                         addAsPlaylistButton.addEventListener('click', function(event) {
                             spotifyService.createPlaylistFromTempPlaylist(spotifyPlaylist);
                         });
 
-                        var list = List.forCollection(spotifyPlaylist.tracks.sort('name'));
+                        var listButtons = findPlaylistButtons();
+                        listButtons.appendChild(addAsPlaylistButton.node);
 
+                        var list = List.forCollection(spotifyPlaylist.tracks.sort('name'));
                         var listWrapper = findPlaylistWrapper();
-                        listWrapper.appendChild(addAsPlaylistButton.node);
                         listWrapper.appendChild(list.node);
                         list.init();
                     });

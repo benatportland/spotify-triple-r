@@ -18,16 +18,18 @@
 <body ng-app="triplerApp">
 <h1></h1>
 
-<div id="albumCoverContainer"></div>
-<div id="buttonContainer"></div>
-<div id="playlistContainer"></div>
-
 <div ng-controller="ProgramsController">
     <select ng-model="selectedProgram" ng-options="p.name for p in programs">
         <option value="">-- Choose a program --</option>
     </select>
 
-    <div id='the-playlist'></div>
+    <div class="playlist-header">
+        <div class="playlist-title">{{playlistName}}</div>
+        <div id="playlist-buttons" class="playlist-buttons"></div>
+        <div style="clear: both"/>
+    </div>
+
+    <div id='playlist-wrapper'></div>
 
     <p>
         {{playlistName}}

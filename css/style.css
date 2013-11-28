@@ -1,3 +1,24 @@
 html {
-  overflow: auto;
+    overflow: auto;
+}
+
+div.playlist-header {
+    clear: both;
+}
+
+div.playlist-title {
+    position: relative;
+    float: left;
+    margin: 10px 5px 10px 5px;
+    font-weight: bold;
+}
+
+div.playlist-buttons {
+    position: relative;
+    float: right;
+    margin: 10px 5px 10px 5px;
+}
+
+#playlist-wrapper {
+    clear: both;
 }
