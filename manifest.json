@@ -30,6 +30,7 @@
     "VendorIdentifier": "com.bendherville",
     "RequiredPermissions": [
         "http://airnet.org.au",
-        "http://ajax.googleapis.com"
+        "http://ajax.googleapis.com",
+        "http://www.rrr.org.au"
     ]
 }

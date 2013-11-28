@@ -4,7 +4,6 @@ require([
     'scripts/cover-example',
     'scripts/button-example',
     'scripts/playlist-example',
-    'scripts/playlist-repository'
 ], function (models, languageExample, coverExample, buttonExample, playlistExample, playlistRepository) {
     'use strict';
 
@@ -13,6 +12,5 @@ require([
 //    buttonExample.doShareButtonForArtist();
 //    buttonExample.doPlayButtonForAlbum();
 //    playlistExample.doPlaylistForAlbum();
-    playlistRepository.showPlaylist();
 
 });
