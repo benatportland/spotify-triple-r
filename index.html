@@ -16,29 +16,27 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
 </head>
 <body ng-app="triplerApp">
-<h1></h1>
 
-<div ng-controller="ProgramsController">
-    <select ng-model="selectedProgram" ng-options="p.name for p in programs">
-        <option value="">-- Choose a program --</option>
-    </select>
+<div class="page-wrapper" ng-controller="ProgramsController">
 
-    <div class="playlist-header">
-        <div class="playlist-title">{{playlistName}}</div>
-        <div id="playlist-buttons" class="playlist-buttons"></div>
-        <div style="clear: both"/>
+    <div class="page-header"></div>
+
+    <div class="program-select">
+        <select ng-model="selectedProgram" ng-options="p.name for p in programs">
+            <option value="">-- Choose a program --</option>
+        </select>
+
+        <a ng-show="selectedProgram.key" class="program-url" href="http://rrr.org.au/program/{{selectedProgram.key}}">{{selectedProgram.name}}</a>
     </div>
 
-    <div id='playlist-wrapper'></div>
+    <div class="playlist-header" ng-show="playlistName">
+        <div class="playlist-title">{{playlistName}}</div>
+        <div id="playlist-buttons" class="playlist-buttons"></div>
+        <div style="clear: both"></div>
+    </div>
 
-    <p>
-        {{playlistName}}
-    <ul id="program-playlist">
-        <li ng-repeat="track in playlistTracks">
-            {{track.artist}} - {{track.name}}
-        </li>
-    </ul>
-    </p>
+    <div id="playlist-wrapper"></div>
+
 </div>
 
 <script src="scripts/main.js"></script>

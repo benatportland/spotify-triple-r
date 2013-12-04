@@ -1,15 +1,52 @@
 html {
     overflow: auto;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background: #e2e2de url(../images/bg.gif) no-repeat top left;
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+    padding-top: 40px;
+}
+
+div.page-wrapper {
+    width: 95%;
+    margin: 0 auto;
+}
+
+div.page-header {
+    height: 39px;
+    width: 100%;
+    background: transparent url(../images/icons/logo.png) no-repeat center left;
+}
+
+div.program-select {
+    margin-top: 20px;
+}
+
+a.program-url {
+    float: right;
+    color: black;
+    font-size: 1.2em;
+    top: 10px;
+    position: relative;
 }
 
 div.playlist-header {
     clear: both;
+    background-color: #333333;
+    color: whitesmoke;
+    border-radius: 5px 5px 0px 0px;
+    margin-top: 10px;
 }
 
 div.playlist-title {
     position: relative;
     float: left;
-    margin: 10px 5px 10px 5px;
+    margin: 14px 5px 10px 14px;
     font-weight: bold;
 }
 
@@ -21,4 +58,11 @@ div.playlist-buttons {
 
 #playlist-wrapper {
     clear: both;
+}
+
+select {
+    height: 28px;
+    -webkit-appearance: menulist-button;
+    border: none;
+    outline: none;
 }

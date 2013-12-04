@@ -1,6 +1,6 @@
 {
     "AppDescription": {
-        "en": "Three Triple R - Melbourne"
+        "en": "RRR - Melbourne"
     },
     "AppIcon": {
         "18x18": "images/icons/icon-18x18.png",
@@ -11,7 +11,7 @@
         "300x300": "images/icons/icon-300x300.png"
     },
     "AppName": {
-        "en": "Triple R"
+        "en": "RRR"
     },
     "BundleIdentifier": "triple-r",
     "BundleType": "Application",
