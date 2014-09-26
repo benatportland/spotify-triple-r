@@ -13,12 +13,12 @@
     "AppName": {
         "en": "RRR"
     },
-    "BundleIdentifier": "triple-r",
+    "BundleIdentifier": "rrr",
     "BundleType": "Application",
     "BundleVersion": "0.0.1",
     "Dependencies": {
-        "api": "1.0.0",
-        "views": "1.10.0"
+        "api": "1.38.0",
+        "views": "1.18.1"
     },
     "SupportedDeviceClasses": [
         "Web",

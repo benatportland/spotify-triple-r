@@ -69,7 +69,7 @@ function ProgramsController($scope, triplerService, spotifyService) {
                         var listButtons = findPlaylistButtons();
                         listButtons.appendChild(addAsPlaylistButton.node);
 
-                        var list = List.forCollection(spotifyPlaylist.tracks.sort('name'));
+                        var list = List.forPlaylist(spotifyPlaylist);
                         var listWrapper = findPlaylistWrapper();
                         listWrapper.appendChild(list.node);
                         list.init();

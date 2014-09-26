@@ -11,7 +11,7 @@ angular.module('triplerApp').factory('spotifyService', function ($http) {
             models.Playlist.createTemporary(playlistName).done(function (spotifyPlaylist) {
                 spotifyPlaylist.load("tracks").done(function (loadedPlaylist) {
                     loadedPlaylist.tracks.snapshot().done(function (tracksSnapshot) {
-                        if (tracksSnapshot.length == 0) {
+                        if (tracksSnapshot.length === 0) {
                             parallelizeTasks(playlistTracks,
                                 function (playlistTrack, callback) {
                                     findFirstSpotifyMatch(playlistTrack, function (track) {
